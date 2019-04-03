@@ -1,0 +1,15 @@
+
+.search-form{
+    .form-control{
+        border: 2px solid $color-primary;
+        padding: 20px 5px;
+        border-radius: 0;
+    }
+    .button{
+        width: 50px;
+        background: $color-primary;
+        svg path{
+                fill :#ffffff;
+        }
+    } 
+}

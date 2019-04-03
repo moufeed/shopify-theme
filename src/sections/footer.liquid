@@ -1,6 +1,5 @@
 <footer>
   {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
- 
   {% if section.settings.footer_logo != blank %}
             {% capture image_size %}{{ section.settings.footer_logo_max_width }}x{% endcapture %}
             <img src="{{ section.settings.footer_logo | img_url: image_size }}"

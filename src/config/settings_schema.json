@@ -12,6 +12,13 @@
     "settings": [
       {
         "type": "color",
+        "id": "color_primary",
+        "label": "primary",
+        "default": "#e51c3e",
+        "info": "primary color"
+      },
+      {
+        "type": "color",
         "id": "color_accent",
         "label": "Accent",
         "default": "#c4cdd5",
@@ -55,7 +62,7 @@
         "type": "header",
         "content": "Social sharing image"
       },
-      {
+      { 
         "type": "image_picker",
         "id": "share_image",
         "label": "Image",

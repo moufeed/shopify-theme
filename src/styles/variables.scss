@@ -12,6 +12,15 @@ $placeholder-color-background: #f9fafb;
 $color-accent: var(--color-accent);
 $color-border: var(--color-border);
 
+$color-primary: var(--color-primary);
+
+$dark-red: #e51c3e;
+
+// bootstrap overrides
+
+
+$primary: $dark-red;
+
 // Helper colors for form error states
 $color-disabled: #000000;
 $color-disabled-border: #000000;

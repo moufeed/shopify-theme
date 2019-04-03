@@ -5,9 +5,20 @@
  */
 @import '~normalize.css/normalize';
 
+ 
+
+
 // Settings
 @import './variables';
 
+ 
+
+// bootstrap 
+
+@import "plugins/bootstrap-4.3.1/scss/bootstrap";
+
+
+ 
 // Tools
 @import './tools/mixins';
 @import './tools/functions';
@@ -27,6 +38,9 @@
 @import './components/icons';
 @import './components/placeholders';
 @import './components/responsive-images';
+@import './components/search-form';
+
+
 
 // Sections
 @import './sections/blog-posts';

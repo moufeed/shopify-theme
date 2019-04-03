@@ -1,0 +1,19 @@
+<form class=" search-form" action="/search" method="get" role="search">
+    <div class="">
+    <label class="sr-only" for="Search-{{ section.id }}">{{ 'general.search.placeholder' | t }}</label>
+    <div class="input-group">
+    <input type="search"
+                class="form-control form-control-lg"
+                name="q"
+                id="Search-{{ section.id }}"
+                value="{{ search.terms | escape }}"
+                placeholder="{{ 'general.search.placeholder' | t }}">
+        <div class="input-group-prepend">
+            <button type="submit" class="button">
+            {% include 'icon-search' %}
+            <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+        </button>
+        </div>
+    </div>
+    </div>
+</form>

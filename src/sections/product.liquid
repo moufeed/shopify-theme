@@ -71,7 +71,12 @@
       {% endfor %}
     {% endunless %}
 
-    <noscript>
+
+    <samp>
+      {{product | json}}
+    </samp>
+//--------------------------------------------------------------------------------------
+   
       <select name="id">
         {% for variant in product.variants %}
           <option
@@ -82,8 +87,8 @@
           </option>
         {% endfor %}
       </select>
-    </noscript>
-
+    
+//--------------------------------------------------------------------------------------
     <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
     <input type="number" id="Quantity" name="quantity" value="1" min="1">
 
