@@ -4,9 +4,9 @@ import 'lazysizes/plugins/rias/ls.rias';
 import 'lazysizes/plugins/bgset/ls.bgset';
 import 'lazysizes';
 import 'lazysizes/plugins/respimg/ls.respimg';
-
 import '../../styles/theme.scss';
 import '../../styles/theme.scss.liquid';
+import '../partials/cartlist';
 
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
 // import {cookiesEnabled} from '@shopify/theme-cart';

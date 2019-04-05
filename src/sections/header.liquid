@@ -1,3 +1,4 @@
+
 <header class="main-header py-4">
   <div class="container">
     <div class="row justify-content-between align-items-center">
@@ -15,10 +16,32 @@
           <h1>{{shop.name}}</h1>
         {%- endif -%}
       </div>
-      <div class="col-12 col-md-5 col-lg-5">
+      <div class="col-12 col-md-5 col-lg-6">
        {%- include 'search-form' -%}
       </div>
-      <div class="col-md-3 col-lg-4"></div>
+      <div class="col-md-3 col-lg-3">
+
+   <div class="d-flex">
+   
+    <div class="currency-box">
+        {%- form 'currency' -%}
+        <select name="currency" >
+          {%- for currency in shop.enabled_currencies -%}
+            {%- if currency == cart.currency -%}
+              <option selected="true">{{currency.symbol}} {{currency.iso_code}}</option>
+            {%- else -%}
+              <option> {{currency.symbol}}  {{currency.iso_code}}</option> 
+            {%- endif -%}
+          {%- endfor -%} 
+        </select>
+      {%- endform -%}
+    </div>
+   {%- include 'cartlist' -%}
+   </div>
+
+   
+    
+   </div> 
     </div>
   </div>
 </header>
@@ -26,13 +49,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <nav class="navbar navbar-expand-lg navbar-light  ">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>

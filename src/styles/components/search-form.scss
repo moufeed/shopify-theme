@@ -8,8 +8,11 @@
     .button{
         width: 50px;
         background: $color-primary;
-        svg path{
+        svg {
+            path{
+            
                 fill :#ffffff;
+        }
         }
     } 
 }

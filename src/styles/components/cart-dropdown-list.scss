@@ -1,0 +1,92 @@
+
+.cart-box{
+    position: relative;
+    .caret-btn{
+      border: 1px solid $border-color;
+      
+      padding: 12px 10px;
+      font-size: 13px;
+      display: inline-block;
+      color: black;
+      transition: all .3s;
+      &:hover{
+        text-decoration: none;
+        border-color: $color-primary;
+        color: $color-primary;
+      }
+    }
+    .cart-header{
+      padding:0 10px 10px;
+      border-bottom: 1px solid $border-color;
+      font-size: 14px;
+    }
+    .cart-items{
+        position: absolute;
+        top: 100%;
+        right : 0;
+        z-index: 105;
+        background: #ffffff;
+        min-width: 300px;
+        box-shadow: 1px 1px 3px 1px #eeeeee;
+        border: 1px solid $border-color;
+        padding: 10px 0;
+        display: none;
+        transition: all .3s;
+    }
+    .image{
+     background: #f5f5f5;
+      img{
+        width: 75px;
+      }
+    }
+    .product-info{
+      width: calc(100% - 80px );
+        a{
+          color: black;
+        }
+        p{
+          font-size: 12px;
+          padding: 5px;
+          span{
+            color: $color-primary;
+          }
+        }
+    }
+    .items-box{
+      padding: 0 10px;
+    }
+    .list-footer{
+      padding:10px 15px ;
+      .btn{
+        border-radius: 0;
+      }
+    }
+    .content_cart {
+      max-height: 300px;
+      overflow-y: hidden;
+    }
+}
+
+/*
+  <div class="items-box">
+            <ul class="list-unstyled">
+            {%- for item in cart.items -%}
+                <li class="d-flex justify-content-between align-items-center">
+                  <figure class="">
+                  {%- if item.image !=blank -%}
+                        <img src="{{ item.image | product_img_url: '75x'   }}" alt="{{item.title}}">
+                  {%- else -%}
+                    <img src="{{ 'empty.jpg' | asset_url }}"  alt="{{item.title}}">
+                  {%- endif -%}
+                  </figure>
+                  <div class="product-info">
+                      <h5> <a href="{{-item.url-}}">{{item.title}}</a> </h5>
+                      <p><span>{{item.final_line_price | money}}</span> <small>{{'cart.label.quantity' | t}} {{item.quantity}}</small> </p>
+                  </div>  
+                </li>
+            {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+    </div>
+*/
