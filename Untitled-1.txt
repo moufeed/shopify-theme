@@ -248,3 +248,16 @@
     }
   </script>
 {% endif %}
+
+
+
+SLATE_STORE=tamtech-test.myshopify.com
+
+
+SLATE_PASSWORD=dd38c60df665ea18dde5978434f8af90
+
+
+SLATE_THEME_ID=39348994141
+
+
+SLATE_IGNORE_FILES=config/settings_data.json
