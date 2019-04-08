@@ -112,6 +112,10 @@
       "total": "Total",
       "discounted_price": "Discounted price",
       "original_price": "Original price"
+    },
+    "ajax_cart":{
+      "continue_shopping" :"continue shopping",
+      "go_to_cart" : "Go to Cart" 
     }
   },
   "collections": {
@@ -255,8 +259,7 @@
       "items_count": {
         "one": "item",
         "other": "items"
-      },
-      "go_to_cart" : "Go to Cart" 
+      }
     },
     "customer": {
       "account": "Account",

@@ -8,12 +8,12 @@
   </a>
 
   <div class="shopping-cart">
-    <header>
+    <header class="clearfix">
     <span>
      <i class="fas fa-shopping-cart"></i>
      <small data-total-count>{{ cart.item_count }}</small>
     </span>
-    <span>
+    <span class="total-span">
      <small>{{'cart.label.total' | t}} </small>
           <strong data-total-price>
             {{cart.total_price | money}} 
@@ -21,7 +21,7 @@
     </span>
     </header> 
     <div class="shopping-cart-body">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled cart-items-list">
               {%- if  cart.item_count > 0 -%}
                     {%- for item in cart.items -%}
                       <li>
@@ -33,14 +33,14 @@
                           {%- endif -%}
                           </figure>
                           <div class="cart-item-info">
-                              <a href="{{-item.url-}}" class="title">{{item.title | truncate: 30 }}</a>
+                              <a href="{{-item.url-}}" class="title">{{item.title | truncate: 33 }}</a>
                               <p>
                                 <span>{{item.final_line_price | money}}</span> 
-                                <span>{{'cart.label.quantity' | t}} {{item.quantity}}</span>
+                                <span>{{'cart.label.quantity' | t}} :  {{item.quantity}}</span>
                               </p>
                           </div>
                             <a href="#" title="{{'cart.general.remove' | t}}" data-id="{{item.id}}" class="del-cart-item-btn">
-                                <i class="fas fa-times"></i>
+                               <i class="far fa-trash-alt"></i>
                             </a>
                       </li>
                   {%- endfor -%}
@@ -53,5 +53,18 @@
               {%- endif -%}
         </ul>
     </div>
+    <footer class="text-center">
+    {%- if  cart.item_count > 0 -%}
+        <div>
+          <a href="/checkout" class="btn btn-secondary w-40">{{'cart.general.checkout' | t}}</a>
+          <a href="/cart" class="btn btn-secondary w-40">{{'cart.ajax_cart.go_to_cart' | t}}</a>
+        </div>
+    {%- else -%}
+       <a href="/collections/all" class="btn btn-block btn-secondary">
+                    {{ 'cart.ajax_cart.continue_shopping'  | t |  upcase }}
+                    </a>
+    {%- endif -%}
+    </footer>
   </div>
 </div>
+ 
