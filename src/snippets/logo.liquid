@@ -1,0 +1,12 @@
+ {%- if section.settings.logo != blank -%}
+        <style > .shop-logo img{ max-width : {{- section.settings.logo_max_width -}}px; } </style>
+            <a href="/" class="shop-logo">
+             {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+           
+            <img src="{{section.settings.logo | img_url : image_size }}"  
+                srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                alt="{{ section.settings.logo.alt | default: shop.name }}">
+            </a>
+        {%- else -%}
+          <h1>{{shop.name}}</h1>
+{%- endif -%}

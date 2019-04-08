@@ -5,9 +5,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@import "functions";
+/* @import "functions";
 @import "variables";
-@import "mixins";
+@import "mixins"; */
 
 
 @import "root";
@@ -35,7 +35,7 @@
 // @import "pagination";
 // @import "badge";
 // @import "jumbotron";
-// @import "alert";
+  @import "alert";
 // @import "progress";
 // @import "media";
 // @import "list-group";

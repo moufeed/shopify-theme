@@ -1,0 +1,13 @@
+   <div class="currency-box">
+        {%- form 'currency' -%}
+        <select name="currency" class="form-control" >
+          {%- for currency in shop.enabled_currencies -%}
+            {%- if currency == cart.currency -%}
+              <option selected="true">{{currency.symbol}} {{currency.iso_code}}</option>
+            {%- else -%}
+              <option> {{currency.symbol}}  {{currency.iso_code}}</option> 
+            {%- endif -%}
+          {%- endfor -%} 
+        </select>
+      {%- endform -%}
+    </div>

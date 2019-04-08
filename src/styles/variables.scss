@@ -1,8 +1,20 @@
-$dir: var(--site-dir);
+@import './plugins/bootstrap-4.3.1/scss/functions';
+@import './plugins/bootstrap-4.3.1/scss/variables';
+@import './plugins/bootstrap-4.3.1/scss/mixins';
+
 
 // Text colors
+$color-primary: var(--color-primary);
+
+
 $color-body-text: var(--color-body-text);
 
+$color-links-dark: #495057;  
+$color-links-dark-hover: $color-primary;
+
+// borders
+$border-color: $gray-400;
+$border-hover-color: $color-primary;
 // Background colors
 $color-body: var(--color-main-background);
 
@@ -14,22 +26,23 @@ $placeholder-color-background: #f9fafb;
 $color-accent: var(--color-accent);
 $color-border: var(--color-border);
 
-$color-primary: var(--color-primary);
-
-$dark-red: #e51c3e;
-$border-color: #e5e5e5;
-
+ 
 // bootstrap overrides
+ 
+ 
+$primary : $color-primary;
+$input-btn-focus-color: rgba(#e51c3e ,.25);
 
+$input-focus-box-shadow : 0 0  0 $input-btn-focus-width $input-btn-focus-color;
 
-$primary: $dark-red;
+$input-focus-border-color: $border-hover-color; 
 
 // Helper colors for form error states
 $color-disabled: #000000;
 $color-disabled-border: #000000;
 $color-error: #ff6d6d;
 $color-error-bg: #ffffff;
-$color-success: #000000;
+$color-success: #000000;  
 $color-success-bg: #000000;
 
 // Typography

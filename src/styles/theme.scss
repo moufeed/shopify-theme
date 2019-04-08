@@ -11,37 +11,45 @@
 // Settings
 @import './variables';
 
+// bootstrap 
+ 
+@import "plugins/bootstrap-4.3.1/scss/bootstrap";
+
+
+
+ 
  
 
-// bootstrap 
-
-@import "plugins/bootstrap-4.3.1/scss/bootstrap";
 
 
  
 // Tools
-@import './tools/mixins';
+/* @import './tools/mixins';
 @import './tools/functions';
-@import './tools/directional';
+@import './tools/directional'; */
 
 // Core
-@import './core/forms';
+/* @import './core/forms';
 @import './core/helpers';
 @import './core/layout';
 @import './core/media';
 @import './core/responsive-tables';
 @import './core/rte';
-@import './core/typography';
+@import './core/typography'; */
 
 // Components
-@import './components/buttons';
+/* @import './components/buttons';
 @import './components/hero-banner';
 @import './components/icons';
-@import './components/placeholders';
-@import './components/responsive-images';
-@import './components/search-form';
-@import './components/navbar';
-@import './components/cart-dropdown-list'; 
+@import './components/placeholders'; */
+@import
+ './components/responsive-images',
+ './components/search-form',
+ './components/navbar',
+ './components/cart-dropdown-list',
+ './components/currency'
+ ; 
+
 
 
 
@@ -53,8 +61,8 @@
 @import './sections/header';
 
 // Templates
-@import './templates/gift_card';
-@import './templates/product';
+/* @import './templates/gift_card';
+@import './templates/product'; */
 .slideshow { 
     position: relative;
 }

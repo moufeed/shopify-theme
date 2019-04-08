@@ -31,8 +31,13 @@
   {%- endif -%}
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  {{ 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' | stylesheet_tag }}
   {{ 'jquery.mCustomScrollbar.css' | asset_url | stylesheet_tag }}
   {{ 'jquery.mCustomScrollbar.concat.min.js' | asset_url | script_tag }}
+  {{ 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'| script_tag }}
+  {{ 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'| script_tag }}
+ 
+
   {% include 'social-meta-tags' %}
   {% include 'style-tags', layout: 'theme' %}
   {% include 'css-variables' %}
@@ -56,9 +61,7 @@
 
    
   {% include 'script-tags', layout: 'theme' %}
-
-  
-  
+ 
   {{ content_for_header }}
 </head>
 
@@ -74,12 +77,10 @@
 
 
 
-
+{{ content_for_layout }}
 {%- comment -%}
 
  {% section 'header' %}
-
-
   <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>

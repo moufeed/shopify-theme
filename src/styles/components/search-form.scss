@@ -1,18 +1,18 @@
-
 .search-form{
     .form-control{
         border: 2px solid $color-primary;
-        padding: 20px 5px;
         border-radius: 0;
+        padding-right: 50px;
     }
-    .button{
+    .input-group-prepend{
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+    }
+    .btn{
         width: 50px;
         background: $color-primary;
-        svg {
-            path{
-            
-                fill :#ffffff;
-        }
+         color: #ffffff;
         }
     } 
-}

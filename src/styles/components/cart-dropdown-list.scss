@@ -1,4 +1,82 @@
 
+.cart-wedgit{
+    .shopping-cart{
+      display: none;
+    }
+    .caret-btn{
+      display: inline-block;
+      height: $input-height;
+      border: $input-border-width solid $border-color;
+      color: $color-links-dark;
+      margin:2px 5px 0;
+      padding: $input-padding-y $input-padding-x;
+      &:hover{
+        color: $color-links-dark-hover;
+      }
+    }
+}
+
+/*
+
+
+   
+<div class="">
+
+  <a href="#" class="caret-btn">
+    <i class="fas fa-shopping-cart"></i>
+    <span data-total-count>{{ cart.item_count }}</span>
+    <span>{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+  </a>
+
+  <div class="shopping-cart">
+    <header>
+    <span>
+     <i class="fas fa-shopping-cart"></i>
+     <small data-total-count>{{ cart.item_count }}</small>
+    </span>
+    <span>
+     <small>{{'cart.label.total' | t}} </small>
+          <strong data-total-price>
+            {{cart.total_price | money}} 
+          </strong>
+    </span>
+    </header> 
+    <div class="shopping-cart-body">
+        <ul class="list-unstyled">
+              {%- if  cart.item_count > 0 -%}
+                    {%- for item in cart.items -%}
+                      <li>
+                        <figure class="image">
+                          {%- if item.image !=blank -%}
+                                <img src="{{ item.image | product_img_url: '75x'   }}" alt="{{item.title}}">
+                          {%- else -%}
+                            <img src="{{ 'empty.jpg' | asset_url }}"  alt="{{item.title}}">
+                          {%- endif -%}
+                          </figure>
+                          <div class="cart-item-info">
+                              <a href="{{-item.url-}}" class="title">{{item.title | truncate: 30 }}</a>
+                              <p>
+                                <span>{{item.final_line_price | money}}</span> 
+                                <span>{{'cart.label.quantity' | t}} {{item.quantity}}</span>
+                              </p>
+                          </div>
+                            <a href="#" title="{{'cart.general.remove' | t}}" data-id="{{item.id}}" class="del-cart-item-btn">
+                                <i class="fas fa-times"></i>
+                            </a>
+                      </li>
+                  {%- endfor -%}
+              {%- else -%}
+                  <li>
+                    <div class="alert alert-warning">
+                    {{'cart.general.empty' | t}}
+                    </div>
+                  </li>
+              {%- endif -%}
+        </ul>
+    </div>
+  </div>
+</div>
+
 .cart-box{
     position: relative;
     .caret-btn{
@@ -66,27 +144,5 @@
       overflow-y: hidden;
     }
 }
-
-/*
-  <div class="items-box">
-            <ul class="list-unstyled">
-            {%- for item in cart.items -%}
-                <li class="d-flex justify-content-between align-items-center">
-                  <figure class="">
-                  {%- if item.image !=blank -%}
-                        <img src="{{ item.image | product_img_url: '75x'   }}" alt="{{item.title}}">
-                  {%- else -%}
-                    <img src="{{ 'empty.jpg' | asset_url }}"  alt="{{item.title}}">
-                  {%- endif -%}
-                  </figure>
-                  <div class="product-info">
-                      <h5> <a href="{{-item.url-}}">{{item.title}}</a> </h5>
-                      <p><span>{{item.final_line_price | money}}</span> <small>{{'cart.label.quantity' | t}} {{item.quantity}}</small> </p>
-                  </div>  
-                </li>
-            {%- endfor -%}
-            </ul>
-          </div>
-        </div>
-    </div>
+ 
 */

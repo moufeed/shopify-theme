@@ -255,7 +255,8 @@
       "items_count": {
         "one": "item",
         "other": "items"
-      }
+      },
+      "go_to_cart" : "Go to Cart" 
     },
     "customer": {
       "account": "Account",

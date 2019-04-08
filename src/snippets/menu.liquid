@@ -1,0 +1,54 @@
+ <nav class="navbar navbar-expand-lg navbar-list">
+            <button class="navbar-toggler" type="button" 
+              data-toggle="collapse" 
+              data-target="#mainnavbar" 
+              aria-controls="mainnavbar" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
+            {% include 'hamburger' %}
+        </button>
+
+         <div class="collapse navbar-collapse" id="mainnavbar">
+              <ul class="navbar-nav mr-auto">
+                  
+    {%- for link in linklists[section.settings.menu].links -%}
+    {%- if link.links != blank  -%}
+        <li class="nav-item dropdown">
+              <a class="dropdown-toggle nav-link" href="{{link.url}}" 
+              id="navDropdown-{{forloop.index }}" 
+              role="button" 
+              data-toggle="dropdown" 
+              aria-haspopup="true" 
+              aria-expanded="false">{{link.title}} </a>
+             <ul class="dropdown-menu" aria-labelledby="navDropdown-{{forloop.index}}">
+              {%- for sub_link in link.links -%}
+                  {%- if sub_link.links != blank -%}
+                      <li class="nav-item dropdown">
+                           <a class="dropdown-toggle" 
+                           href="{{sub_link.url}}" 
+                           id="navbarDropdown-{{forloop.index }}" 
+                           role="button" 
+                           data-toggle="dropdown" 
+                           aria-haspopup="true"  
+                           aria-expanded="false">{{sub_link.title}}</a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-{{forloop.index }}">
+                          {%- for sub_sub_link in sub_link.links -%}
+                                 <li><a href="{{sub_sub_link.url}}">{{sub_sub_link.title}}</a></li>
+                          {%- endfor -%}
+                          </ul>
+                      </li>
+                  {%- else -%}
+                      <li class="nav-item"><a href="{{sub_link.url}}">{{sub_link.title}}</a></li>
+                  {%- endif -%}
+              {%- endfor -%}
+             </ul>
+        </li>
+    {%- else -%}
+        <li class="nav-item">
+            <a class="nav-link" href="{{link.url}}">{{link.title}}</a>
+        </li>
+    {%- endif -%}
+{%- endfor -%}
+              </ul>
+         </div>
+      </nav>

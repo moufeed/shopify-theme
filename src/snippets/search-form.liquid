@@ -3,16 +3,15 @@
     <label class="sr-only" for="Search-{{ section.id }}">{{ 'general.search.placeholder' | t }}</label>
     <div class="input-group">
     <input type="search"
-                class="form-control form-control-lg"
+                class="form-control"
                 name="q"
                 id="Search-{{ section.id }}"
                 value="{{ search.terms | escape }}"
                 placeholder="{{ 'general.search.placeholder' | t }}">
         <div class="input-group-prepend">
-            <button type="submit" class="button">
-            {% include 'icon-search' %}
-            <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
-        </button>
+            <button type="submit" class="btn ">
+              <i class="fas fa-search"></i>
+            </button>
         </div>
     </div>
     </div>
