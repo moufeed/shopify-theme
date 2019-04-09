@@ -9,15 +9,21 @@
       height: $input-height;
       border: $input-border-width solid $border-color;
       color: $color-links-dark;
-      margin:2px 5px 0;
+      margin:0 5px;
       padding: $input-padding-y $input-padding-x;
       &:hover{
-        color: $color-links-dark-hover;
+        text-decoration: none;
+        background: $color-links-dark-hover;
+        color: $white;
+        border-color:  $color-links-dark-hover;
+      }
+      @include media-breakpoint-down(md){
+        margin-right: 0;
       }
     }
     .shopping-cart{
       position: absolute;
-      top: 100%;
+      top: 105%;
       right: 0; 
       z-index: 15;
       background: $white;
@@ -26,6 +32,9 @@
       padding:15px; 
       @include media-breakpoint-up(lg){
         min-width: 400px;
+      }
+      @include media-breakpoint-down(sm){
+        width: 340px;
       }
     }  
     header{
@@ -98,15 +107,16 @@
     a{
       color: $dark;
       overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
     &:hover{
       color: $color-primary;
     }
     }
     p{
       margin-bottom: 0;
-      color: $color-body-text-light ;
+      color: $color-text-light;
       font-size: 14px;
       span{
         &:last-child{
@@ -128,5 +138,3 @@
     }
   }
 }
-
- 

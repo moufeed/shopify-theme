@@ -1,0 +1,64 @@
+
+.user-area{
+   
+    .dropdown-toggle{
+        border-left: 1px solid rgba($white ,.7);
+        color: $white;
+        margin: 0.5rem 1rem;
+        border-radius: 0;
+        padding: 0.3rem 1rem;
+    }
+    .dropdown-menu{
+        border-radius: 0;
+        i{
+            margin-right:5px;
+            color: $primary;
+        }
+    }
+
+    &.md-view .dropdown-toggle{
+            display: inline-block;
+            height: $input-height;
+            border: $input-border-width solid $border-color;
+            color: $color-links-dark;
+            margin:0 5px;
+            padding: $input-padding-y $input-padding-x;
+    }
+}
+
+/*
+ 
+  <div class="dropdown">
+    <button class="  " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      <i class="far fa-user"></i>
+      {%- if customer  and  customer.first_name != blank -%}
+      {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+      {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+      {%- endif -%}
+    </button>
+    <div class="" aria-labelledby="dropdownMenuButton">
+      {%- if customer -%}
+      <a href="/account">
+        <i class="fas fa-user-alt"></i>
+        <span>{{ 'layout.customer.account' | t }}</span>
+      </a>
+      <a href="/account/logout" id="customer_logout_link" class="dropdown-item">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>{{'layout.customer.log_out' | t}}</span>
+      </a>
+      {%- else -%}
+      <a href="/account/login" id="customer_login_link" class="dropdown-item">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>{{'layout.customer.log_in' | t}}</span>
+      </a>
+      <a href="/account/register" id="customer_register_link" class="dropdown-item">
+        <i class="fas fa-user-plus"></i>
+        <span>{{'layout.customer.create_account' | t}}</span>
+      </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% endif %}
+*/

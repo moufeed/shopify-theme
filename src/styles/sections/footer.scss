@@ -1,0 +1,17 @@
+.main-footer{
+    background: $color-bg-dark;
+    min-height: 150px;
+} 
+
+.bottom-footer{
+    background: $color-bg-blackness;
+    .row{
+        min-height: 100px;
+    }
+}
+
+.payment-icons{
+    img{
+        width: 40px;
+    }
+}

@@ -5,8 +5,8 @@
 
 
 .navbar-list{
-    .icon path{
-        fill: #ffffff;
+    .fa-bars{
+        color: #ffffff;
     }
         .nav-item{
                
@@ -33,7 +33,7 @@
                     text-transform: capitalize;
                     transition: all .3s;
                     overflow: hidden;
-                    color: $color-body-text;
+                    color: $color-text;
                     
                     &:hover{
                         text-decoration: none;

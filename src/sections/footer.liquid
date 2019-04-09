@@ -1,79 +1,59 @@
-<footer>
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  {% if section.settings.footer_logo != blank %}
-            {% capture image_size %}{{ section.settings.footer_logo_max_width }}x{% endcapture %}
-            <img src="{{ section.settings.footer_logo | img_url: image_size }}"
-                srcset="{{ section.settings.footer_logo | img_url: image_size }} 1x, {{ section.settings.footer_logo | img_url: image_size, scale: 2 }} 2x"
-                alt="{{ section.settings.footer_logo.alt | default: shop.name }}">
-          {% else %}
-            {{ shop.name }}
-          {% endif %}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+<footer class="main-footer py-5">
+  <div class="container">
+    <div class="row">
 
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
-
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+    </div>
   </div>
 </footer>
+ <div class="bottom-footer">
+       <div class="container">
+          <div class="row align-items-center justify-content-between">
+              <div class="col-12 col-md-auto text-light">
+              {% capture powered_by_link %}
+              <a href="http://tamtech.solutions" target="_blank">{{'layout.footer.powered_by' | t: name:shop.name }}</a>
+              {% endcapture %}
+{%- comment -%}
+{{ powered_by_link }}
+{%- endcomment -%}
+              
+                  {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}
+              </div> 
+              <div class="col-12 col-md-auto">
+                
+                  <div class="payment-icons">
+                  <img class="icon" src="//cdn.shopify.com/s/global/payment_types/creditcards_american_express.svg?3cdcd185ab8e442b12edc11c2cd13655f56b0bb1">
+                  <img class="icon" src="//cdn.shopify.com/s/global/payment_types/creditcards_master.svg?3cdcd185ab8e442b12edc11c2cd13655f56b0bb1">
+                  <img class="icon" src="//cdn.shopify.com/s/global/payment_types/creditcards_visa.svg?3cdcd185ab8e442b12edc11c2cd13655f56b0bb1">
+                  </div>
 
-{% schema %}
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "footer_linklist",
-        "label": "First menu",
-        "default": "footer"
-      },
-      {
-        "type": "image_picker",
-        "id": "footer_logo",
-        "label": "Logo image"
-      },
-      {
+
+
+
+                    {% if section.settings.show_payment_icons %}
+                    {% unless shop.enabled_payment_types == empty %}
+                      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
+                      <div class="payment-icons">
+                        {% for type in shop.enabled_payment_types %}
+                            {{ type | payment_type_svg_tag: class: 'icon' }}
+                        {% endfor %}
+                      </div>
+                    {% endunless %}
+                  {% endif %}
+              </div>
+          </div>
+        </div> 
+  </div>
+  
+  {% schema %}
+    {
+       "name": "Footer",
+       "settings" : [
+         {
         "type": "checkbox",
         "id": "show_payment_icons",
         "label": "Show payment icons",
         "default": false
-      }
-    ]
-  }
-{% endschema %}
+        }
+       ]
+    }
+  {% endschema %}

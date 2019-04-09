@@ -1,41 +1,7 @@
 
 .currency-box{
-    margin-top: 2px;
+    margin-top: 0;
     select{
         border-radius: 0;
     }
 }
-
-/*
-height: calc(1.5em + 0.75rem + 2px);
-
-<div class="currency-box">
-        {%- form 'currency' -%}
-        <select name="currency" >
-          {%- for currency in shop.enabled_currencies -%}
-            {%- if currency == cart.currency -%}
-              <option selected="true">{{currency.symbol}} {{currency.iso_code}}</option>
-            {%- else -%}
-              <option> {{currency.symbol}}  {{currency.iso_code}}</option> 
-            {%- endif -%}
-          {%- endfor -%} 
-        </select>
-      {%- endform -%}
-    </div>
-
-    
-.currency-box{
-    select{
-        border: 1px solid $border-color;
-        padding: 13px 10px;
-        font-size: 13px;
-        &:focus{
-            border-color: $color-primary;
-            outline: 0;
-        }
-    }
-}
-
-
-
-*/

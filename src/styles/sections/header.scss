@@ -1,0 +1,15 @@
+@include media-breakpoint-down(md){
+    .logo-col{
+        text-align: center;
+        padding: 15px 0;
+    }
+    .currency-col{
+        padding-top: 15px ;
+    }
+}
+
+.currency-col{
+    .d-flex{
+        float: right;
+    }
+}

@@ -19,7 +19,7 @@ textarea,
 select {
   font-size: 1.6rem;
   max-width: 100%;
-  border: 1px solid $color-border;
+  border: 1px solid $border-color;
   border-radius: 0;
 
   &[disabled] {
@@ -46,11 +46,11 @@ select::-ms-expand {
 // Force option color (affects IE only)
 option {
   background-color: $color-body;
-  color: $color-body-text;
+  color: $color-text;
 }
 
 .input-error {
   border-color: $color-error;
   background-color: $color-error-bg;
-  color: $color-body-text;
+  color: $color-text;
 }
