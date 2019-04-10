@@ -1,7 +1,13 @@
 <footer class="main-footer py-5">
   <div class="container">
     <div class="row">
-
+            <div class="col-md-3 col-lg-4">
+              {%- if section.settings.address_footer_text != blank -%}
+                    <address>
+                        
+                    </address>
+              {%- endif -%}
+            </div>
     </div>
   </div>
 </footer>
@@ -12,23 +18,13 @@
               {% capture powered_by_link %}
               <a href="http://tamtech.solutions" target="_blank">{{'layout.footer.powered_by' | t: name:shop.name }}</a>
               {% endcapture %}
-{%- comment -%}
-{{ powered_by_link }}
-{%- endcomment -%}
+          {%- comment -%}
+          {{ powered_by_link }}
+          {%- endcomment -%}
               
                   {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}
               </div> 
               <div class="col-12 col-md-auto">
-                
-                  <div class="payment-icons">
-                  <img class="icon" src="//cdn.shopify.com/s/global/payment_types/creditcards_american_express.svg?3cdcd185ab8e442b12edc11c2cd13655f56b0bb1">
-                  <img class="icon" src="//cdn.shopify.com/s/global/payment_types/creditcards_master.svg?3cdcd185ab8e442b12edc11c2cd13655f56b0bb1">
-                  <img class="icon" src="//cdn.shopify.com/s/global/payment_types/creditcards_visa.svg?3cdcd185ab8e442b12edc11c2cd13655f56b0bb1">
-                  </div>
-
-
-
-
                     {% if section.settings.show_payment_icons %}
                     {% unless shop.enabled_payment_types == empty %}
                       <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
@@ -51,9 +47,26 @@
          {
         "type": "checkbox",
         "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
+        "default": true,
+         "label": {
+            "ar" : "Payment icons",
+            "de": "Zahlungssymbole",
+            "en": "Payment icons",
+            "es": "Iconos de pago",
+            "fr": "Icônes de paiement",
+            "it": "Icone di pagamento",
+            "ja": "支払いアイコン",
+            "pt-BR": "Ícones de pagamento"
+          }
+        },{
+          "type" :"text",
+          "id": "address_footer_text",
+          "label": {
+            "ar" : "العنوان",
+            "en" : "Address" 
+          }
         }
        ]
+       
     }
   {% endschema %}

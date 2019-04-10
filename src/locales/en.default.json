@@ -272,7 +272,8 @@
       "social_platform": "{{ name }} on {{ platform }}",
       "copyright": "Copyright",
       "payment_methods": "Payment methods accepted",
-      "powered_by" : "powered by {{ name }}"
+      "powered_by" : "powered by {{ name }}",
+      "contact_us" :"contact us"
     }
   },
   "products": {
