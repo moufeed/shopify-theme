@@ -1,12 +1,33 @@
-<footer class="main-footer py-5">
+<footer class="main-footer py-5 text-light"  >
   <div class="container">
     <div class="row">
-            <div class="col-md-3 col-lg-4">
+            <div class="col-md-4 col-lg-4">
+                     <div class="footer-contact-info">
+                        <h4 class="footer_title">{{'layout.footer.contact_us' | t}}</h4>
               {%- if section.settings.address_footer_text != blank -%}
+              <span>
+              <i class="fas fa-map-marker"></i>
                     <address>
-                        
+                          {{section.settings.address_footer_text}}
                     </address>
+              </span>
               {%- endif -%}
+                {%- if section.settings.phone_footer_text != blank -%}
+                    <span>
+                    <i class="fas fa-phone"></i>
+                      <strong dir="ltr">{{section.settings.phone_footer_text}}</strong>
+                    </span>
+                {%- endif -%}
+                    {%- if section.settings.email_footer_text !=blank -%}
+                        <span>
+                          <i class="fas fa-envelope"></i>
+                          <a href="mailto:{{section.settings.email_footer_text}}" dir="ltr">{{section.settings.email_footer_text}}</a>
+                        </span>
+                    {%- endif -%}
+                     </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+              {% include 'footer-menu' %}
             </div>
     </div>
   </div>
@@ -58,14 +79,60 @@
             "ja": "支払いアイコン",
             "pt-BR": "Ícones de pagamento"
           }
-        },{
+        },
+        {
+          "type": "header",
+          "content": {
+            "ar" : "معلومات التواصل",
+            "en" : "Contact information" 
+          }
+        },
+        {
           "type" :"text",
           "id": "address_footer_text",
           "label": {
             "ar" : "العنوان",
             "en" : "Address" 
           }
+        },{
+          "type" :"text",
+          "id": "phone_footer_text",
+          "placeholder" :"Eg +900256123456",
+          "label": {
+            "ar" : "رقم الهاتف",
+            "en" : "Phone number" 
+          }
+        },{
+          "type" :"text",
+          "id": "email_footer_text",
+          "placeholder" :"info@website.com",
+          "label": {
+            "ar" : "البريد الالكتروني",
+            "en" : "Email Address" 
+          }
+        },{
+          "type" :"header",
+          "content" :{
+            "en":"Menu",
+            "ar" :"القائمة"
+          }
+        },
+        {
+          "type" :"text",
+          "id": "link_list_footer_heading",
+          "label": {
+            "ar" : "العنوان",
+            "en" : "heading" 
+          }
+        },{
+        "type":      "link_list",
+        "id":        "linke_list_footer",
+        "label":     {
+          "en" :"Choose a Linklist",
+          "ar" :"اختيار قائمة"
         }
+      }
+          
        ]
        
     }

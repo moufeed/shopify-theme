@@ -2,15 +2,14 @@
   <div class="dropdown user-area {{user_area}}">
     <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
-      <i class="far fa-user"></i>
+      <i class="far fa-user"></i> 
       {%- if customer  and  customer.first_name != blank -%}
-      {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-      {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+      <span class="mx-2">{{customer.first_name}}</span>
       {%- endif -%}
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       {%- if customer -%}
-      <a href="/account">
+      <a href="/account"  class="dropdown-item">
         <i class="fas fa-user-alt"></i>
         <span>{{ 'layout.customer.account' | t }}</span>
       </a>

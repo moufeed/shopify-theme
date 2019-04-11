@@ -1,0 +1,35 @@
+{%- if section.settings.link_list_footer_heading != blank -%}
+          <h4 class="footer_title">{{ section.settings.link_list_footer_heading }}</h4>
+{%- endif -%}
+{%- if section.settings.linke_list_footer !=blank -%}
+{%- assign menu = linklists[section.settings.linke_list_footer].links -%}
+        <ul class="footer_links">
+               {%- for item in menu -%}
+                    <li>
+                        {%- if item.links != blank -%}
+                                 <a href="{{item.url}}">{{item.title}}</a>
+                                    <ul>
+                                    {%- for sub_item in item.links -%}
+                                        <li>
+                                        {%- if sub_item.links != blank  -%}
+                                          <a href="{{sub_item.url}}">{{sub_item.title}}</a>
+                                                <ul>
+                                                {%- for sub_sub_item in sub_item.links -%}
+                                                    <li>
+                                                       <a href="{{sub_sub_item.url}}">{{sub_sub_item.title}}</a>
+                                                    </li>
+                                                {%- endfor -%}
+                                                </ul>
+                                        {%- else -%}
+                                             <a href="{{sub_item.url}}">{{sub_item.title}}</a>
+                                        {%- endif -%}
+                                        </li>
+                                    {%- endfor -%}
+                                    </ul>
+                        {%- else -%}
+                            <a href="{{item.url}}">{{item.title}}</a>
+                        {%- endif -%}
+                    </li>
+               {%- endfor -%}
+        </ul>
+{%- endif -%}
