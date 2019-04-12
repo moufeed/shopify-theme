@@ -1,343 +1,37 @@
-
-<div>
-
-asdasd
-</div>
-
-{% schema %}
-{
-  "name": {
-    "de": "Slideshow",
-    "en": "Slideshow",
-    "es": "Diapositivas",
-    "fr": "Diaporama",
-    "it": "Presentazione",
-    "ja": "スライドショー",
-    "pt-BR": "Apresentação de slides"
-  },
-  "max_blocks": 2,
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "slider_autorotate",
-      "default": false, 
-      "label": {
-        "de": "Auto-rotieren der Slides",
-        "en": "Auto-rotate slides",
-        "es": "Rotar las diapositivas automáticamente",
-        "fr": "Rotation automatique des diapositives",
-        "it": "Ruota slide automaticamente",
-        "ja": "スライドの自動切り替え",
-        "pt-BR": "Girar os slides automaticamente"
-      }
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": {
-        "de": "Folie",
-        "en": "Slide", 
-        "es": "Diapositiva",
-        "fr": "Diapositive",
-        "it": "Slide",
-        "ja": "スライド",
-        "pt-BR": "Slide"
-      },
-      "settings": [
+<section class="section-slider" data-section-type="slideShow"  data-section-id="{{ section.id }}" >
+    <h1>asdadasdasd</h1>
+</section>
+ {% schema %}
+  {
+    "name": "Slideshow",
+    "max_blocks": 10,
+       "blocks" : [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": {
-            "de": "Foto",
-            "en": "Image",
-            "es": "Imagen",
-            "fr": "Image",
-            "it": "Immagine",
-            "ja": "画像",
-            "pt-BR": "Imagem"
-          }
-        },
-        {
-          "type": "select",
-          "id": "alignment",
-          "label": {
-            "de": "Foto-Position",
-            "en": "Image position",
-            "es": "Posición de la imagen",
-            "fr": "Position de l'image",
-            "it": "Posizione Immagine",
-            "ja": "画像の位置",
-            "pt-BR": "Posição da imagem"
-          },
-          "default": "center center",
-          "options": [
-            {
-              "label": {
-                "de": "Oben links",
-                "en": "Top left",
-                "es": "Superior izquierda",
-                "fr": "En haut à gauche",
-                "it": "In alto a sinistra",
-                "ja": "左上",
-                "pt-BR": "Superior esquerdo"
-              },
-              "value": "left top"
-            },
-            {
-              "label": {
-                "de": "Oben Mitte",
-                "en": "Top center",
-                "es": "Superior al centro",
-                "fr": "En haut au centre",
-                "it": "In alto al centro",
-                "ja": "中央上",
-                "pt-BR": "Superior centro"
-              },
-              "value": "center top"
-            },
-            {
-              "label": {
-                "de": "Oben rechts",
-                "en": "Top right",
-                "es": "Superior derecha",
-                "fr": "En haut à droite",
-                "it": "In alto a destra",
-                "ja": "右上",
-                "pt-BR": "Superior direito"
-              },
-              "value": "right top"
-            },
-            {
-              "label": {
-                "de": "Mitte links",
-                "en": "Middle left",
-                "es": "Al medio a la izquierda",
-                "fr": "Au milieu à gauche",
-                "it": "Nel mezzo a sinistra",
-                "ja": "中央左",
-                "pt-BR": "Meio esquerdo"
-              },
-              "value": "left center"
-            },
-            {
-              "label": {
-                "de": "Mitte mittig",
-                "en": "Middle center",
-                "es": "Al medio al centro",
-                "fr": "Centrée au milieu",
-                "it": "In mezzo",
-                "ja": "中央中",
-                "pt-BR": "Meio centro"
-              },
-              "value": "center center"
-            },
-            {
-              "label": {
-                "de": "Mitte rechts",
-                "en": "Middle right",
-                "es": "Al medio a la derecha",
-                "fr": "Au milieu à droite",
-                "it": "Nel mezzo a destra",
-                "ja": "中央右",
-                "pt-BR": "Meio direito"
-              },
-              "value": "right center"
-            },
-            {
-              "label": {
-                "de": "Unten links",
-                "en": "Bottom left",
-                "es": "Inferior izquierda",
-                "fr": "En bas à gauche",
-                "it": "In basso a sinistra",
-                "ja": "左下",
-                "pt-BR": "Inferior esquerdo"
-              },
-              "value": "left bottom"
-            },
-            {
-              "label": {
-                "de": "Unten mittig",
-                "en": "Bottom center",
-                "es": "Inferior al centro",
-                "fr": "En bas au centre",
-                "it": "In basso al centro",
-                "ja": "中央下",
-                "pt-BR": "Inferior centro"
-              },
-              "value": "center bottom"
-            },
-            {
-              "label": {
-                "de": "Unten rechts",
-                "en": "Bottom right",
-                "es": "Inferior derecha",
-                "fr": "En bas à droite",
-                "it": "In basso a destra",
-                "ja": "右下",
-                "pt-BR": "Inferior direito"
-              },
-              "value": "right bottom"
-            }
+          "type" : "image",
+          "name" : "slide",
+          "settings":[
+            { 
+              "type": "image_picker",
+              "id": "image"
+            } ,
+             {
+              "type": "image_picker",
+              "id": "image_thumbnail"
+            } 
           ]
+        }
+      ],
+    "presets": [{
+      "name": "Slideshow",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
         },
         {
-          "type": "range",
-          "id": "overlay_opacity",
-          "label": {
-            "de": "Überlagerungsdeckkraft",
-            "en": "Overlay opacity",
-            "es": "Opacidad superpuesta",
-            "fr": "Opacité de la superposition",
-            "it": "Opacità della sovrapposizione",
-            "ja": "オーバーレイ不透明率",
-            "pt-BR": "Opacidade de sobreposição"
-          },
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "unit": {
-            "de": "%",
-            "en": "%",
-            "es": "%",
-            "fr": "%",
-            "it": "%",
-            "ja": "%",
-            "pt-BR": "%"
-          },
-          "default": 30
-        },
-        {
-          "type": "header",
-          "content": {
-            "de": "Textfarbe",
-            "en": "Text",
-            "es": "texto",
-            "fr": "Couleur du texte",
-            "it": "Testo",
-            "ja": "テキスト",
-            "pt-BR": "Texto"
-          }
-        },
-        {
-          "type": "color",
-          "id": "color_text",
-          "label": {
-            "de": "Textfarbe",
-            "en": "Text color",
-            "es": "Color de texto",
-            "fr": "Couleur du texte",
-            "it": "Colore testo",
-            "ja": "文字の色",
-            "pt-BR": "Cor do texto"
-          },
-          "info": {
-            "de": "Wird nicht auf Mobilgeräten angewendet",
-            "en": "Not applied on mobile",
-            "es": "No se aplica en dispositivos móviles",
-            "fr": "Non appliqué sur le mobile",
-            "it": "Non applicabile su mobile",
-            "ja": "モバイルで適用されません",
-            "pt-BR": "Não aplicado no celular"
-          },
-          "default": "#ffffff"
-        },
-        {
-          "type": "select",
-          "id": "text_alignment",
-          "label": {
-            "de": "Textausrichtung",
-            "en": "Text alignment",
-            "es": "Alineación de texto",
-            "fr": "Alignement du texte",
-            "it": "Allineamento del testo",
-            "ja": "テキストアラインメント",
-            "pt-BR": "Alinhamento de texto"
-          },
-          "default": "center",
-          "options": [
-            {
-              "label": {
-                "de": "Links",
-                "en": "Left",
-                "es": "Izquierda",
-                "fr": "Gauche",
-                "it": "Sinistra",
-                "ja": "左",
-                "pt-BR": "Esquerda"
-              },
-              "value": "left"
-            },
-            {
-              "label": {
-                "de": "Mitte",
-                "en": "Center",
-                "es": "Centrar",
-                "fr": "Centre",
-                "it": "Al centro",
-                "ja": "中央",
-                "pt-BR": "Centro"
-              },
-              "value": "center"
-            },
-            {
-              "label": {
-                "de": "Rechts",
-                "en": "Right",
-                "es": "Derecha",
-                "fr": "Droite",
-                "it": "Destra",
-                "ja": "右",
-                "pt-BR": "Direita"
-              },
-              "value": "right"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "slide_heading",
-          "default": "Image slide",
-          "label": {
-            "de": "Überschrift",
-            "en": "Heading",
-            "es": "Título",
-            "fr": "En-tête",
-            "it": "Heading",
-            "ja": "見出し",
-            "pt-BR": "Título"
-          }
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": {
-            "de": "Schaltflächenbezeichnung",
-            "en": "Button label",
-            "es": "Etiqueta de botón",
-            "fr": "Texte du bouton",
-            "it": "Etichetta pulsante",
-            "ja": "ボタンラベル",
-            "pt-BR": "Etiqueta do botão"
-          }
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": {
-            "de": "Schaltflächenlink",
-            "en": "Button link",
-            "es": "Enlace de botón",
-            "fr": "Lien du bouton",
-            "it": "Link pulsante",
-            "ja": "ボタンリンク",
-            "pt-BR": "Link do botão"
-          }
+          "type": "image"
         }
       ]
-    }
-  ]
- 
-}
+    }]
+  }
 {% endschema %}
